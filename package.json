@@ -1,0 +1,50 @@
+{
+  "name": "TestRN_V0_40",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "keymirror": "~0.1.0",
+    "object-assign": "^1.0.0",
+    "react": "15.4.2",
+    "react-native": "^0.41.2",
+    "react-native-actionsheet": "^2.0.5",
+    "react-native-camera": "^0.5.1",
+    "react-native-checkbox": "^1.0.15",
+    "react-native-form": "^2.0.6",
+    "react-native-fs": "^2.0.1-rc.2",
+    "react-native-gallery": "0.0.17",
+    "react-native-gesture-password": "^0.2.0",
+    "react-native-image-crop-picker": "v0.12.2",
+    "react-native-image-picker": "^0.25.7",
+    "react-native-keyboard-aware-scroll-view": "^0.2.0",
+    "react-native-navbar": "^1.5.0",
+    "react-native-orientation": "^1.17.0",
+    "react-native-photo-browser": "git+https://github.com/ksti/react-native-photo-browser.git",
+    "react-native-picker": "^3.0.5",
+    "react-native-root-toast": "1.0.3",
+    "react-native-router-flux": "3.35.0",
+    "react-native-scrollable-tab-view": "^0.7.0",
+    "react-native-sqlite-storage": "^3.1.2",
+    "react-native-storage": "^0.1.2",
+    "react-native-uuid-generator": "^1.1.0",
+    "react-native-viewpager": "^0.2.12",
+    "react-redux": "^4.4.5",
+    "react-timer-mixin": "^0.13.3",
+    "react-transform-hmr": "^1.0.4",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "jest": "18.1.0",
+    "react-test-renderer": "15.4.2"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
