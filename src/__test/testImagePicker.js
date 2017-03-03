@@ -100,7 +100,7 @@ export default class testImagePicker extends BaseContainer{
   constructor(props){
     super(props);
     this.state={
-      avatarSource: '',
+      avatarSource: {},
       randomPhoto: null,
       textParams: {
         test: 'just for test',

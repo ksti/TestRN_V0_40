@@ -69,10 +69,10 @@ let HTTPRequest = new httpRequest();
 // let strURL = 'https://moa.sinooceanland.com:10086/AnChangReportService/Interface_GetOrgInstitutionCodeService.service?userName=liming'
 let strURL = 'https://moa.sinooceanland.com:10086/AnChangReportService/Interface_SaleSearchInterfaceService.service'
 // let parameter = {};
-parameter = {OrgCode: '', CityCode: '', ProjectCode: '', TimeCategory: 'Year', DateStar: '', DateEnd: ''};
+let parameter = {OrgCode: '', CityCode: '', ProjectCode: '', TimeCategory: 'Year', DateStar: '', DateEnd: ''};
 
-
-dataSource = [
+let testPushTo = 'testPageForProject2'; // 要跳转的 Scene key, 在引入 Scenes 时创建的唯一标识
+let dataSource = [
     {
         key: 'TestImagePicker',
         text: 'TestImagePicker',
@@ -90,7 +90,7 @@ dataSource = [
         text: 'TestSomeOnePage',
     },
     {
-        key: 'majorHazardsItemsForAcceptancePage',
+        key: testPushTo,
         text: 'TestPushToAnyPage',
     },
 ];

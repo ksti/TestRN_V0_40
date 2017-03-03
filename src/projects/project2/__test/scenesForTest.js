@@ -31,66 +31,18 @@ import React,{Component} from 'react'
 import {Scene} from 'react-native-router-flux';
 
 // test list
-import TestsListView from './testsListView'
 // test pages
-// import TestFile from './testFile'
-import TestImagePicker from './testImagePicker'
-import TestPopupPage from './testPopupPage'
-import TestPopupSelecter from './testPopupSelecter'
+import TestPage from './TestPage'
 
-// project test pages 
-let scenesForTestProject;
-import scenesForTestProject1 from '../projects/project1/__test/scenesForTest'
-import scenesForTestProject2 from '../projects/project2/__test/scenesForTest'
+// 测试页面
+//
 
-// other
-import SQLiteDemo from './SQLiteDemo'
-
-// 引入工程配置
-import Config from '../common/Config'
-switch (Config.project) {
-    case 'project1': // 工程1
-        scenesForTestProject = scenesForTestProject1;
-        break;
-    case 'project2': // 工程2
-        scenesForTestProject = scenesForTestProject2;
-        break;
-
-    default:
-        break;
-};
-
-let testComponent = TestPopupSelecter;
-
-let scenes = [
+const scenes = [
     {
-        key: 'test',
-        comp: TestsListView,
-    },
-    {
-        key: 'TestImagePicker',
-        comp: TestImagePicker,
-    },
-    {
-        key:'TestPopupPage',
-        comp:TestPopupPage,
-    },
-    {
-        key: 'TestPopupSelecter',
-        comp: TestPopupSelecter,
-    },
-    {
-        key: 'TestSomeOnePage',
-        comp: testComponent,
-    },{
-        key:'SQLiteDemo',
-        comp:SQLiteDemo,
+        key: 'testPageForProject2',
+        comp: TestPage,
     },
 ];
-
-// scenes.concat(scenesForTestProject1, scenesForTestProject2);
-// scenes.concat(scenesForTestProject);
-scenes = new Array().concat(scenes, scenesForTestProject);
 
 // module.exports =
 // (

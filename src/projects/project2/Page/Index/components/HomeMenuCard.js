@@ -88,7 +88,6 @@ let cardMenu = [
             key: "saleStatistic"
         }, 
     ],
-    /*
     [
         {
             title: '阙凯',
@@ -124,7 +123,6 @@ let cardMenu = [
             key: "gaojie"
         }
     ],
-    */
 ];
 export default class HomeMenuCard extends Component {
     constructor(props) {

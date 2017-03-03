@@ -57,8 +57,8 @@ parameter = {OrgCode: '', CityCode: '', ProjectCode: '', TimeCategory: 'Year', D
 
 import PopupSelecter from '../components/PopupView/PopupSelecter'
 import RelativeContainer from '../components/customPopupPage/RelativeContainer'
-import PopupFormPageDetail1 from '../projects/project1/Page/ProjectAcceptance/components/PopupFormPageDetail1'
-import PopupFormPageDetail2 from '../projects/project1/Page/ProjectAcceptance/components/PopupFormPageDetail2'
+// import PopupFormPageDetail1 from '../projects/project1/Page/ProjectAcceptance/components/PopupFormPageDetail1'
+// import PopupFormPageDetail2 from '../projects/project1/Page/ProjectAcceptance/components/PopupFormPageDetail2'
 
 export default class testPopupSelecter extends BaseContainer{
   constructor(props){
@@ -143,7 +143,7 @@ export default class testPopupSelecter extends BaseContainer{
         "disqualificationParticular": "门扇颜色非蓝底白字；"
       }
     ]
-    this.PopupFormPageDetail2.getWrappedInstance().setSelectedCommonProblems(testSelectedArray);
+    // this.PopupFormPageDetail2.getWrappedInstance().setSelectedCommonProblems(testSelectedArray);
   }
 
   componentWillUnmount() {
@@ -189,7 +189,7 @@ export default class testPopupSelecter extends BaseContainer{
         
 
   render(){
-
+    /*
     return(
       <View style={[styles.container, {backgroundColor: 'white'}]}>
         {this.defaultRenderNavigationBar()}
@@ -309,6 +309,101 @@ export default class testPopupSelecter extends BaseContainer{
           max={9}
           hiddenWhenMax={true}
           imageSource={this.state.imageSource}
+        />
+
+      </View>  
+    );
+    */
+
+    return(
+      <View style={[styles.container, {backgroundColor: 'white'}]}>
+        {this.defaultRenderNavigationBar()}
+        <StatusBar
+           // barStyle="light-content"
+           barStyle="default"
+        />
+        <Text style={[styles.text, {marginTop:2}]} onPress={() => this.popupPage('popup', 'PopupSelecterRelative')}> 'PopupSelecterRelative' </Text>
+        <PopupSelecter
+          // animateType={this.state.animateType}
+          animateType='popup' 
+          ref={(PopupSelecter) => {this.PopupSelecterRelative = PopupSelecter}}
+          // width={200}
+          // height={(this.state.dataSource.length + 1) * 44}
+          position='relative'
+          headerLeftText='左边标题'
+          headerRightText='右边按钮'
+          dataSource={this.state.dataSource}
+        />
+        <Text style={[styles.text, {marginTop:2}]} onPress={() => this.popupPage('popup', 'PopupSelecterRelative2')}> 'PopupSelecterRelative2' </Text>
+        <View 
+          pointerEvents='box-none'
+          // style={{
+          //   flex: 1, 
+          //   position: 'absolute', top: 0, right: 0, left: 0, bottom: 0, 
+          //   zIndex: 888,
+          //   overflow: 'hidden',
+          // }}
+          style={{
+            // flex: 1, 
+            height: 1, 
+            zIndex: 888,
+            overflow: 'visible',
+          }}
+        >
+          <PopupSelecter
+            // animateType={this.state.animateType}
+            animateType='popup' 
+            ref={(PopupSelecter) => {this.PopupSelecterRelative2 = PopupSelecter}}
+            // width={200}
+            // height={(this.state.dataSource.length + 1) * 44}
+            position='relative'
+            headerLeftText='左边标题'
+            headerRightText='右边按钮'
+            dataSource={this.state.dataSource}
+          />
+        </View>
+        <Text style={[styles.text, {marginTop:2}]} onPress={() => this.popupPage('popup', 'PopupSelecterRelative3')}> 'PopupSelecterRelative drop down' </Text>
+        <RelativeContainer>
+          <PopupSelecter
+            // animateType={this.state.animateType}
+            animateType='dropdown' 
+            ref={(PopupSelecter) => {this.PopupSelecterRelative3 = PopupSelecter}}
+            // width={200}
+            // height={(this.state.dataSource.length + 1) * 44}
+            position='relative'
+            headerLeftText='左边标题'
+            headerRightText='右边按钮'
+            onSelect={(rowData, sectionID, rowID) => this._onSelect(rowData, sectionID, rowID, 'PopupSelecterRelative3')}
+            dataSource={this.state.dataSource}
+          />
+        </RelativeContainer>
+        <Text style={[styles.text, {marginTop:2}]} onPress={() => this.popupPage('popup', 'PopupSelecter')}> 'PopupSelector' </Text>
+        <Text style={[styles.text, {marginTop:2}]} onPress={() => this.popupPage('popup', 'PopupSelecter2')}> 'PopupSelector2' </Text>
+        <PopupSelecter
+          // animateType={this.state.animateType}
+          animateType='popup' 
+          ref={(PopupSelecter) => {this.PopupSelecter = PopupSelecter}}
+          // width={200}
+          // height={(this.state.dataSource.length + 1) * 44}
+          position='absolute'
+          headerLeftText='左边标题'
+          headerRightText='右边按钮'
+          dataSource={this.state.dataSource}
+        />
+        <PopupSelecter
+          // animateType={this.state.animateType}
+          animateType='popup' 
+          ref={(PopupSelecter) => {this.PopupSelecter2 = PopupSelecter}}
+          // width={200}
+          // height={(this.state.dataSource.length + 1) * 44}
+          headerLeftText='左边标题'
+          headerRightText='右边按钮'
+          closeButton={(
+            <Image source={require('../../resource/images/App/ic_delete.png')} style={[{width: 20, height: 20}]} />
+          )}
+          onClose={(savedData) => this._onClose(savedData, 'PopupSelecter2')}
+          onSelect={(rowData, sectionID, rowID) => this._onSelect(rowData, sectionID, rowID, 'PopupSelecter2')}
+          dataSource={this.state.dataSource}
         />
 
       </View>  
