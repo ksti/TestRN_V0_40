@@ -110,9 +110,12 @@ export default class testPage extends BaseContainer {
     // 测试下载文件
     let fileName = downloadStrURL.split('/').pop();
     this.testFileDownLoad(downloadStrURL, downloadPath, fileName, {}, (success, filePath) => {
-      this.setState({
-        avatarSource: this._setImageSourceWithPath(filePath),
-      });
+      if (success) {
+        this.setState({
+          avatarSource: this._setImageSourceWithPath(filePath),
+        });
+      };
+      
     });
   }
 
@@ -138,7 +141,7 @@ export default class testPage extends BaseContainer {
   _setImageSourceWithPath = (path) => {
     let source = {uri: path, isStatic: true};
     if (Platform.OS === 'android') {
-      const source = {uri: ('file://' + path), isStatic: true};
+      source = {uri: ('file://' + path), isStatic: true};
     }
     return source;
   }

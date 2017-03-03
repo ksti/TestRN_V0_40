@@ -83,8 +83,8 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.2"
 
     defaultConfig {
         applicationId "com.testrn_v0_40"
@@ -157,10 +157,24 @@ dependencies {
     compile project(':react-native-image-crop-picker')
     compile project(':react-native-camera')
     compile project(':react-native-sqlite-storage')
+
     compile fileTree(dir: "libs", include: ["*.jar"])
     //compile "com.android.support:appcompat-v7:23.0.1"
-    compile 'com.android.support:appcompat-v7:24.2.0'
+    compile 'com.android.support:appcompat-v7:24.0.2'
     compile "com.facebook.react:react-native:+"  // From node_modules
+
+    // 如果你需要支持Android4.0(API level 14)之前的版本
+    compile 'com.facebook.fresco:animated-base-support:0.11.0'
+
+    // 如果你需要支持GIF动图
+    compile 'com.facebook.fresco:animated-gif:0.11.0'
+
+    // 如果你需要支持WebP格式，包括WebP动图
+    compile 'com.facebook.fresco:animated-webp:0.11.0'
+    compile 'com.facebook.fresco:webpsupport:0.11.0'
+
+    // 如果只需要支持WebP格式而不需要动图
+    // compile 'com.facebook.fresco:webpsupport:0.11.0'
 
 }
 
